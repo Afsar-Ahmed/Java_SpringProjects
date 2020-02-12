@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<h1>This is index.html!</h1>
+<table>
+<tr th:each="p : ${personList}">
+<td th:text="${p.name}">Frank</td>
+</tr>
+</table>
+
+<form method="post" action="" th:action="@{/insertPerson}" th:object="${person}">
+<input type="hidden" name="id" th:field="*{id}"/>
+Name: <input type="text" name="name" th:field="*{name}" /><br>
+<input type="submit" value="Go!" />
+</form>
+
+</body>
+</html>
